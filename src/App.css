@@ -2,37 +2,87 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --clr-btn: rgb(25, 183, 211);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  background-color: black;
+}
+
+h3{
+  text-shadow: 0 0 .3em rgba(255, 255, 255, 0.575);
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.container{
   color: white;
+  position: absolute;
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.App-link {
-  color: #61dafb;
+.button{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2rem;
+  padding: .25em .5em;
+  border-radius: .5em;
+  color:  var(--clr-btn);
+  cursor: pointer;
+  border: var(--clr-btn) 4px solid;
+  background: black;
+  text-shadow:0 0 .125em rgba(255, 255, 255, 0.473), 0 0 .25em var(--clr-btn) ;
+  box-shadow: 0 0 .5em, inset 0 0 .5em;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button::before{
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  background: var(--clr-btn);
+  color: black;
+  top: 120%;
+  bottom: 0;
+  width: 85%;
+  height: 100%;
+  transform: perspective(1em) rotateX(40deg) scale(1, .4);
+  filter: blur(1.2em);
+  opacity: .6;
+}
+
+.button::after{
+  content: '';
+  position: absolute;
+  color: black;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 2em 0.5em var(--clr-btn);
+  opacity: 0;
+  color: black;
+  transition: opacity 150ms;
+}
+
+.button:hover{
+  background-color: var(--clr-btn);
+  color: black;
+  text-shadow: none;
+  background-color: var(--clr-btn);
+}
+
+.button:hover::after{
+  opacity: 1;
+  color: black;
 }

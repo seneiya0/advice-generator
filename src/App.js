@@ -1,5 +1,7 @@
 import './App.css';
-import {useEffect, useState} from 'react'
+import { useState } from 'react';
+import AdviceContainer from './AdviceContainer';
+import Navbar from './Navbar';
 
 function App() {
   const [advice, setAdvice] = useState('')
@@ -12,8 +14,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1> <button onClick={() => fetchData()}> FJHSHWGJ </button> </h1>
-      <h2>{advice} </h2>
+      <div>
+        <Navbar />
+      </div>
+      <div className="container">
+        {!advice && (
+          <button className='button' onClick={() => fetchData()}> Generate Advice </button>
+        )}
+      </div>
+      <AdviceContainer advice={advice} fetchData={fetchData}/>
     </div>
   );
 }

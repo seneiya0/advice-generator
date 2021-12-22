@@ -1,0 +1,21 @@
+#nav{
+  display: flex;
+  flex-direction: row;
+}
+
+h2{
+  text-shadow: 0 0 .4em rgb(130, 213, 228);
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 5px;
+  color: rgb(25, 183, 211);
+}
+
+#search{
+  margin-left: auto;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  border: transparent;
+  margin-right: 20px;
+}
