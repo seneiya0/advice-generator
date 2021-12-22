@@ -1,5 +1,5 @@
 import './Navbar.css';
-import {FaCloudShowersHeavy, FaSearch} from 'react-icons/fa'
+import {FaSearch} from 'react-icons/fa'
 import {useState} from 'react'
 
 function Navbar({handleSubmit, setValue, value}){
