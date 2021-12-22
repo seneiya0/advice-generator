@@ -1,6 +1,7 @@
 #nav{
   display: flex;
   flex-direction: row;
+
 }
 
 h2{
@@ -9,13 +10,35 @@ h2{
   margin-left: 20px;
   margin-top: 5px;
   color: rgb(25, 183, 211);
+  cursor: pointer;
+  margin-right: auto;
 }
 
 #search{
-  margin-left: auto;
+  /* margin-left: auto; */
   background: transparent;
-  font-size: 20px;
+  font-size: 22px;
   color: white;
   border: transparent;
   margin-right: 20px;
+  cursor: pointer;
+}
+
+#search-bar{
+  width: 200px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.075);
+  border: transparent;
+  color: white;
+  border-radius: 5px;
+  box-shadow: rgb(25, 183, 211) 0 0 1em;
+}
+
+#search-bar:focus{
+  box-shadow: rgb(25, 183, 211) 0 0 1em;
+}
+
+form{
+  margin-top: 10px;
+  margin-left: auto;
 }
