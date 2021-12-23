@@ -1,4 +1,4 @@
-function AdviceContainer({advice, fetchData}){
+function AdviceContainer({advice, fetchData, noResults}){
 
   return(
     <div>

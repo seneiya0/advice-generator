@@ -45,8 +45,12 @@ function App() {
       {searched && (
         <div>
           <Navbar handleSubmit={handleSubmit} value={value} setValue={setValue} />
-          <h3 style={{color:'white'}}> {searchResults.map((r) => <h3 id='search-results'> {r.advice} </h3>)} </h3>
-          <h3 style={{color:'white'}}> {noResults} </h3>
+          {noResults !== `No advice slips found matching ${value}, try another search.` && (
+            <h3 style={{color:'white'}}> {searchResults.map((r) => <h3 id='search-results'> {r.advice} </h3>)} </h3>
+          )}
+          {noResults !== '' && noResults === `No advice slips found matching ${value}, try another search.` && (
+            <h3 style={{color:'white'}}> {noResults} </h3>
+          )}
           <button className='button' onClick={() => setSearched(false)}> Home </button>
         </div>
       )}
